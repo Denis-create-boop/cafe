@@ -1,7 +1,5 @@
 from django.shortcuts import render
 
-from  dishes.models import Categories
-
 
 def index(request):
 

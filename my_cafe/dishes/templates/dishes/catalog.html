@@ -51,7 +51,7 @@
                     {% endif %}
                     
                     <div class="card-body">
-                        <a href="../dishes/product.html">
+                        <a href="{% url 'catalog:product' product.slug %}">
                             <p class="card-title">{{ product.name }}</p>
                         </a>
                         <p class="card-text text-truncate">{{ product.description }}</p>
@@ -76,11 +76,6 @@
             </div>
         {% endfor %}
         <!-- Карта товара -->
-        
-        
-        
-       
-
     </div>
 
 {% endblock %}
