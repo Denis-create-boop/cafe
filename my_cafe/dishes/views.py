@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
-from django.shortcuts import render
+from dishes.models import Products
 
 
 def catalog(request):
+    dishes = Products.objects.all()
     context = {
         "title": "Little Italy - Каталог",
+        "dishes": dishes,
+        
     }
     return render(request, "dishes/catalog.html", context)
 
