@@ -1,8 +1,17 @@
 from django.shortcuts import render
 
+from  dishes.models import Categories
+
 
 def index(request):
-    context = {"title": "Little Italy - Главная", "content": "Кафе - Little Italy"}
+
+    dishes = Categories.objects.all()
+
+    context = {
+        "title": "Little Italy - Главная", 
+        "content": "Кафе - Little Italy",
+        "dishes": dishes
+        }
     return render(request, "main/index.html", context)
 
 
