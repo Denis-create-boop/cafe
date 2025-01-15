@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path
 
-from goods import views
+from dishes import views
 
-app_name = "goods"
+app_name = "dishes"
 
 urlpatterns = [
     path("", views.catalog, name="index"),
