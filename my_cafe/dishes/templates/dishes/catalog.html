@@ -123,14 +123,35 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center my-4">
     <div class="custom-shadow d-flex">
-      <li class="page-item disabled">
-        <a class="page-link">Previous</a>
+      <li class="page-item {% if not dishes.has_previous %}disabled{% endif %}">
+        <a
+          class="page-link"
+          href="{% if dishes.has_previous %}
+        {% url 'catalog:index' slug_url dishes.previous_page_number %}
+        {% else %}
+        #
+        {% endif %}"
+          >Назад</a
+        >
       </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      {% for page in dishes.paginator.page_range %}
       <li class="page-item">
-        <a class="page-link" href="#">Next</a>
+        <a class="page-link" href="{% url 'catalog:index' slug_url page %}"
+          >{{ page }}</a
+        >
+      </li>
+      {% endfor %}
+
+      <li class="page-item {% if not dishes.has_next %}disabled{% endif %}">
+        <a
+          class="page-link"
+          href="{% if dishes.has_next %}
+        {% url 'catalog:index' slug_url dishes.next_page_number %}
+        {% else %}
+        #
+        {% endif %}"
+          >Следующая</a
+        >
       </li>
     </div>
   </ul>
