@@ -89,7 +89,7 @@
         <a href="{% url 'catalog:product' product.slug %}">
           <p class="card-title">{{ product.name }}</p>
         </a>
-        <p class="card-text text-truncate">{{ product.description }}</p>
+        <p class="card-text text-truncate">{{ product.description|truncatechars:25 }}</p>
         <p class="product_id">id: {{ product.display_id }}</p>
         <div class="d-flex justify-content-between">
           <!--есть ли скидка на товар-->
@@ -135,11 +135,12 @@
         >
       </li>
       {% for page in dishes.paginator.page_range %}
-      <li class="page-item">
-        <a class="page-link" href="{% url 'catalog:index' slug_url page %}"
-          >{{ page }}</a
-        >
-      </li>
+      {% if page >= dishes.number|add:-2 and page <= dishes.number|add:2 %}
+        <li class="page-item {% if dishes.number == page %} active {% endif %}">
+          <a class="page-link" href="{% url 'catalog:index' slug_url page %}">{{ page }}</a>
+        </li>
+      {% endif %}
+      
       {% endfor %}
 
       <li class="page-item {% if not dishes.has_next %}disabled{% endif %}">
