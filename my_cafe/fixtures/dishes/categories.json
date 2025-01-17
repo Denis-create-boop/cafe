@@ -1,0 +1,72 @@
+[
+  {
+    "model": "dishes.categories",
+    "pk": 2,
+    "fields": { "name": "╤рырЄ√", "slug": "salaty" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 3,
+    "fields": { "name": "╦рэўш", "slug": "lanchi" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 4,
+    "fields": { "name": "╟ръєёъш ъ тшэє", "slug": "zakuski-k-vinu" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 5,
+    "fields": { "name": "╟ръєёъш фы  фтюшї", "slug": "zakuski-dlya-dvoih" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 6,
+    "fields": { "name": "╧рёЄр", "slug": "pasta" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 7,
+    "fields": { "name": "├юЁ ўшх сы■фр", "slug": "goryachie-blyuda" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 8,
+    "fields": { "name": "├рЁэшЁ", "slug": "garnir" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 9,
+    "fields": { "name": "╧шЎЎр", "slug": "picca" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 10,
+    "fields": { "name": "╨шчюЄЄю", "slug": "rizotto" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 11,
+    "fields": { "name": "╤єя√", "slug": "supy" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 12,
+    "fields": { "name": "─хёхЁЄ√", "slug": "deserty" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 13,
+    "fields": { "name": "╩юЇх ш эх Єюы№ъю", "slug": "kofe-i-ne-tolko" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 14,
+    "fields": { "name": "╫рщ т ўрщэшъх", "slug": "chaj-v-chajnike" }
+  },
+  {
+    "model": "dishes.categories",
+    "pk": 15,
+    "fields": { "name": "╫Єю фюсртшь", "slug": "chto-dobavim" }
+  }
+]
