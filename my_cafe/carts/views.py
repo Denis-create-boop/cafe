@@ -1,3 +1,4 @@
+from turtle import update
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
@@ -35,8 +36,27 @@ def cart_add(request):
     return JsonResponse(response_data)
 
 
-def cart_change(request, product_slug):
-    pass
+def cart_change(request):
+    
+    cart_id = request.POST.get("cart_id")
+    quantity = request.POST.get("quantity")
+
+    cart = Cart.objects.get(id=cart_id)
+
+    cart.quantity = quantity
+    cart.save()
+
+    cart = get_user_carts(request)
+    cart_items_html = render_to_string(
+        "carts/includes/included_cart.html", {"carts": cart}, request=request
+    )
+
+    response_data = {
+        "message": "Количество изменено",
+        "cart_items_html": cart_items_html,
+    }
+
+    return JsonResponse(response_data)
 
 
 def cart_remove(request):
