@@ -50,6 +50,8 @@ $(document).ready(function () {
     });
   });
 
+
+
   // Ловим собыитие клика по кнопке удалить товар из корзины
   $(document).on("click", ".remove-from-cart", function (e) {
     // Блокируем его базовое действие
@@ -76,10 +78,10 @@ $(document).ready(function () {
         // Сообщение
         successMessage.html(data.message);
         successMessage.fadeIn(400);
-        // Через 7сек убираем сообщение
+        // Через 5сек убираем сообщение
         setTimeout(function () {
           successMessage.fadeOut(400);
-        }, 7000);
+        }, 5000);
 
         // Уменьшаем количество товаров в корзине (отрисовка)
         cartCount -= data.quantity_deleted;
