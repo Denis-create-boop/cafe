@@ -100,6 +100,7 @@
                         <a href="{% url 'catalog:product' product.slug %}">
                             <p class="card-title">
                                 {% autoescape off %}
+                                
                                     {% if product.headline %}
                                         {{product.headline}}
                                     {% else %}
@@ -122,14 +123,16 @@
                             <div class="d-flex justify-content-between">
                             <!--есть ли скидка на товар-->
                             {% if product.discount %}
-                                <p><s>{{ product.price }}</s> $</p>
+                                <p><s>{{ product.price }}</s> руб.</p>
                                 <p><strong>{{ product.sell_price }}</strong></p>
                                 <span class="badge bg-warning text-dark">{{ product.discount }}</span>
                             {% else %}
                                 <p><strong>{{ product.price }}</strong></p>
                             {% endif %}
                             
-                            <a href="{% url "cart:cart_add" product.slug %}" class="btn add-to-cart">
+                            <a href="{% url 'cart:cart_add' %}" class="btn add-to-cart"
+                            data-product-id="{{ product.id }}">
+                                {% csrf_token %}
                                 <img
                                     class="mx-1"
                                     src="{% static 'deps/icons/cart-plus.svg' %}"
